@@ -1,0 +1,39 @@
+{
+  "fields": [
+    "FuelLevel",
+    "OnPitRoad",
+    "DriverMarker",
+    // race info
+    "LapCompleted",
+    "RaceLaps",
+    "TrackTemp",
+    // LF
+    "LFwearL",
+    "LFwearM",
+    "LFwearR",
+    "LFtempCL",
+    "LFtempCM",
+    "LFtempCR",
+    // RF
+    "RFwearR",
+    "RFwearM",
+    "RFwearL",
+    "RFtempCL",
+    "RFtempCM",
+    "RFtempCR",
+    // LR
+    "LRwearL",
+    "LRwearM",
+    "LRwearR",
+    "LRtempCL",
+    "LRtempCM",
+    "LRtempCR",
+    // RR
+    "RRwearR",
+    "RRwearM",
+    "RRwearL",
+    "RRtempCL",
+    "RRtempCM",
+    "RRtempCR"
+  ]
+}
