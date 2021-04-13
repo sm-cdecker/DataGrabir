@@ -30,11 +30,11 @@ namespace DataGrabir.App
             Console.Clear();
             Console.SetCursorPosition(0, 0);
             Console.WriteLine("Updated @ {0}", DateTime.Now);
-            Console.WriteLine("is iRacing Connected: {0}", wrapper.IsConnected);
-            Console.WriteLine("is iRacing Running: {0}", wrapper.IsRunning);
+            Console.WriteLine("is iRacing Connected: {0}", wrapper.IsConnected ? "Y" : "N");
+            Console.WriteLine("is iRacing Running: {0}", wrapper.IsRunning ? "Y" : "N");
             
-            Console.WriteLine("FuelLevel: {0}", telemetry.FuelLevel);
-            Console.WriteLine("IsOnTrack: {0}", telemetry.IsOnTrack);
+            Console.WriteLine("FuelLevel: {0}", telemetry.FuelLevel.Value);
+            Console.WriteLine("IsOnTrack: {0}", telemetry.IsOnTrack.Value ? "Y" : "N");
             Console.WriteLine("OnPitRoad: {0}", telemetry.CarIdxOnPitRoad.Value[telemetry.PlayerCarIdx.Value]);
         }
 
