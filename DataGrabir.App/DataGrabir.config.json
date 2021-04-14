@@ -1,17 +1,18 @@
 {
   // x times per second
   "UpdateFreq": 1,
-  "FormUrl": "",
+  "FormUrl": "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdtSQpPjUl8_amIow4yOzN0ueehyEHp1_bujHq77yqForh98g/formResponse",
+
   // mappings
   "FormMapping": {
     // Core
-    "FuelLevel": "",
+    "FuelLevel": "entry.50583357",
     "OnPitRoad": "",
     "DriverMarker": "",
     // race info
-    "LapCompleted": "",
+    "LapCompleted": "entry.2000544942",
     "RaceLaps": "",
-    "TrackTemp": "",
+    "TrackTemp": "entry.1005835583",
     // LF
     "LFwearL": "",
     "LFwearM": "",

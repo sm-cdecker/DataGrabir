@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using DataGrabir.App.Models;
+using System.Text;
 
 namespace DataGrabir.App.Extensions
 {
@@ -12,9 +13,26 @@ namespace DataGrabir.App.Extensions
             var form = new MultipartFormDataContent();
             foreach (KeyValuePair<string, TelemetryFormField> field in state.Fields)
             {
-                form.Add(new StringContent(field.Value.Value.ToString()), field.Value.FormId);
+                if (!String.IsNullOrWhiteSpace(field.Value.FormId))
+                {
+                    form.Add(new StringContent(field.Value.Value.ToString()), field.Value.FormId);
+                }
             }
             return form;
+        }
+
+        public static string GetConsoleString(this TelemetryState state)
+        {
+            var sb = new StringBuilder()
+                .AppendLine("IsConnected: " + (state.IsConnected ? "Y" : "N"))
+                .AppendLine("IsRunning: " + (state.IsRunning ? "Y" : "N"));
+
+            foreach (KeyValuePair<string, TelemetryFormField> field in state.Fields)
+            {
+                sb.AppendLine(field.Value.Name + " : " + field.Value.Value);
+            }
+
+            return sb.ToString();
         }
     }
 }
