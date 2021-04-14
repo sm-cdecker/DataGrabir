@@ -1,39 +1,44 @@
 {
-  "fields": [
-    "FuelLevel",
-    "OnPitRoad",
-    "DriverMarker",
+  // x times per second
+  "UpdateFreq": 1,
+  "FormUrl": "",
+  // mappings
+  "FormMapping": {
+    // Core
+    "FuelLevel": "",
+    "OnPitRoad": "",
+    "DriverMarker": "",
     // race info
-    "LapCompleted",
-    "RaceLaps",
-    "TrackTemp",
+    "LapCompleted": "",
+    "RaceLaps": "",
+    "TrackTemp": "",
     // LF
-    "LFwearL",
-    "LFwearM",
-    "LFwearR",
-    "LFtempCL",
-    "LFtempCM",
-    "LFtempCR",
+    "LFwearL": "",
+    "LFwearM": "",
+    "LFwearR": "",
+    "LFtempCL": "",
+    "LFtempCM": "",
+    "LFtempCR": "",
     // RF
-    "RFwearR",
-    "RFwearM",
-    "RFwearL",
-    "RFtempCL",
-    "RFtempCM",
-    "RFtempCR",
+    "RFwearR": "",
+    "RFwearM": "",
+    "RFwearL": "",
+    "RFtempCL": "",
+    "RFtempCM": "",
+    "RFtempCR": "",
     // LR
-    "LRwearL",
-    "LRwearM",
-    "LRwearR",
-    "LRtempCL",
-    "LRtempCM",
-    "LRtempCR",
+    "LRwearL": "",
+    "LRwearM": "",
+    "LRwearR": "",
+    "LRtempCL": "",
+    "LRtempCM": "",
+    "LRtempCR": "",
     // RR
-    "RRwearR",
-    "RRwearM",
-    "RRwearL",
-    "RRtempCL",
-    "RRtempCM",
-    "RRtempCR"
-  ]
+    "RRwearR": "",
+    "RRwearM": "",
+    "RRwearL": "",
+    "RRtempCL": "",
+    "RRtempCM": "",
+    "RRtempCR": ""
+  }
 }

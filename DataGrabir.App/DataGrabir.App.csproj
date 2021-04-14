@@ -9,4 +9,10 @@
     <ProjectReference Include="..\iRacingSdkWrapper\iRacingSdkWrapper\iRacingSdkWrapper.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="DataGrabir.config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

@@ -1,5 +1,7 @@
 ﻿using System;
-using iRacingSdkWrapper;
+using System.IO;
+using System.Text.Json;
+using DataGrabir.App.Models;
 
 namespace DataGrabir.App
 {
@@ -7,11 +9,11 @@ namespace DataGrabir.App
     {
         static void Main(string[] args)
         {
-            Action<object> action = (object obj) =>
-                {
-                    new IRacingMonitor().Run();
-                };
-            IRacingMonitor monitor = new IRacingMonitor();
+            var DGConf = JsonSerializer.Deserialize<DGConfig>(
+                File.ReadAllText(@"./DataGrabir.config.json"),
+                new JsonSerializerOptions() { ReadCommentHandling= JsonCommentHandling.Skip }
+            );
+            IRacingMonitor monitor = new IRacingMonitor(DGConf);
 
             monitor.Run();
             Console.ReadKey();
