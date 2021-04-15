@@ -37,13 +37,20 @@ namespace DataGrabir.App.Extensions
         }
         private static UpdateEvents GetUpdateType(TelemetryState newState, TelemetryState oldState)
         {
+
+            // Tow start
+            if (oldState.PlayerCarTowTime == 0 && newState.PlayerCarTowTime > 0)
+            {
+                return UpdateEvents.TowStart;
+            }
+
             // New Lap
-            if (oldState.LapsCompleted != newState.LapsCompleted)
+            if (oldState.LapsCompleted != newState.LapsCompleted && !oldState.OnPitRoad)
             {
                 return UpdateEvents.LapStart;
             }
 
-            // Pit entry
+            // Pit road entry
             if (!oldState.OnPitRoad && newState.OnPitRoad)
             {
                 return UpdateEvents.PitRdEntry;
@@ -65,12 +72,6 @@ namespace DataGrabir.App.Extensions
             if (oldState.OnPitRoad && !newState.OnPitRoad)
             {
                 return UpdateEvents.PitRdExit;
-            }
-
-            // Tow start
-            if (oldState.PlayerCarTowTime == 0 && newState.PlayerCarTowTime > 0)
-            {
-                return UpdateEvents.TowStart;
             }
 
             return UpdateEvents.None;
