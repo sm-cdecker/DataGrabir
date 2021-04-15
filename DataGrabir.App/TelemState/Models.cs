@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using DataGrabir.App.Enums;
+﻿using System.Collections.Generic;
 
 namespace DataGrabir.App.TelemState
 {
@@ -25,6 +23,6 @@ namespace DataGrabir.App.TelemState
         public string Name { get; set; }
         public string FormId { get; set; }
         public object Value { get; set; }
-        public IEnumerable<EventUpdateEnum> UpdateOn { get; set; }
+        public ICollection<UpdateEvents> UpdateOn { get; set; }
     }
 }

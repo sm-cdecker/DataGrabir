@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DataGrabir.App.Models;
 using DataGrabir.App.TelemState;
 using iRacingSdkWrapper;
@@ -20,6 +19,7 @@ namespace DataGrabir.App.Extensions
                 PlayerCarInPitStall = wrapper.GetTelemetryValue<bool>("PlayerCarInPitStall").Value,
                 LapsCompleted = wrapper.GetTelemetryValue<int>("LapsCompleted").Value
             };
+
             foreach(KeyValuePair<string, string> field in config.FormMapping)
             {
                 tState.Fields.Add(field.Key, new TelemetryFormField()

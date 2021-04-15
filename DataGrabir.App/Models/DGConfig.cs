@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using DataGrabir.App.TelemState;
 
 namespace DataGrabir.App.Models
 {
@@ -10,6 +7,12 @@ namespace DataGrabir.App.Models
     {
         public int UpdateFreq { get; set; }
         public string FormUrl { get; set; }
-        public Dictionary<string, string> FormMapping { get; set; }
+        public Dictionary<string, ConfFormField> FormMapping { get; set; }
     }
+
+    public class ConfFormField {
+        public UpdateEvents UpdateOn { get; set; }
+        public string FormId { get; set; }
+    }
+
 }
