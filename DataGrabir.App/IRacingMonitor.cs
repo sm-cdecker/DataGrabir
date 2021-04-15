@@ -3,6 +3,8 @@ using iRacingSdkWrapper;
 using DataGrabir.App.Models;
 using System.Net.Http;
 using DataGrabir.App.Extensions;
+using System.Diagnostics;
+using DataGrabir.App.TelemState;
 
 namespace DataGrabir.App
 {
@@ -29,8 +31,10 @@ namespace DataGrabir.App
             this.wrapper.Start();
         }
 
-        private void TelemetryUpdate(object sender, SdkWrapper.TelemetryUpdatedEventArgs e)
+        private async void TelemetryUpdate(object sender, SdkWrapper.TelemetryUpdatedEventArgs e)
         {
+            var stopwatch = new Stopwatch();
+            stopwatch.Start();
             var newState = this.wrapper.ToTelemetryState(this.config);
             if (!String.IsNullOrWhiteSpace(this.config.FormUrl))
             {
@@ -38,21 +42,23 @@ namespace DataGrabir.App
                 {
                     var req = new HttpRequestMessage(HttpMethod.Post, this.config.FormUrl);
                     req.Content = newState.GetForm();
-                    this.httpClient.SendAsync(req);
+                    await this.httpClient.SendAsync(req);
                 }
             }
             this.state = newState;
-            this.Print(e.TelemetryInfo);
+            this.Print(e.TelemetryInfo, stopwatch.ElapsedMilliseconds);
         }
 
-        private void Print(TelemetryInfo telemetry)
+        private void Print(TelemetryInfo telemetry, long timeTaken)
         {
             
             Console.Clear();
             Console.SetCursorPosition(0, 0);
             Console.WriteLine("Updated @ {0}", DateTime.Now);
+            Console.WriteLine("Took: {0}ms", timeTaken);
             Console.WriteLine(this.state.GetConsoleString());
         }
+
 
     }
 }

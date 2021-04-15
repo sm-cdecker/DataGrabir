@@ -4,7 +4,7 @@ using System.Net.Http;
 using DataGrabir.App.Models;
 using System.Text;
 
-namespace DataGrabir.App.Extensions
+namespace DataGrabir.App.TelemState
 {
     public static class TelemetryStateHelpers
     {
@@ -34,5 +34,6 @@ namespace DataGrabir.App.Extensions
 
             return sb.ToString();
         }
+
     }
 }
