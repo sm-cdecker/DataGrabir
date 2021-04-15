@@ -35,10 +35,10 @@ namespace DataGrabir.App
         {
             var stopwatch = new Stopwatch();
             stopwatch.Start();
-            var newState = this.wrapper.ToTelemetryState(this.config);
+            var newState = this.wrapper.ToTelemetryState(this.config, this.state);
             if (!String.IsNullOrWhiteSpace(this.config.FormUrl))
             {
-                if (newState.IsConnected && newState.IsRunning && (newState.OnPitRoad != this.state.OnPitRoad))
+                if (newState.UpdateEvent != UpdateEvents.None)
                 {
                     var req = new HttpRequestMessage(HttpMethod.Post, this.config.FormUrl);
                     req.Content = newState.GetForm();

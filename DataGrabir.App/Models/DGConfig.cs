@@ -11,7 +11,7 @@ namespace DataGrabir.App.Models
     }
 
     public class ConfFormField {
-        public UpdateEvents UpdateOn { get; set; }
+        public ICollection<UpdateEvents> UpdateOn { get; set; }
         public string FormId { get; set; }
     }
 

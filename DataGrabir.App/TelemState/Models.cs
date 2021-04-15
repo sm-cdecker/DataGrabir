@@ -8,6 +8,7 @@ namespace DataGrabir.App.TelemState
         {
             this.Fields = new Dictionary<string, TelemetryFormField>();
         }
+        public UpdateEvents UpdateEvent { get; set; }
         public bool IsConnected { get; set; }
         public bool IsRunning { get; set; }
         public bool OnPitRoad { get; set; }

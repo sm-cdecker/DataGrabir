@@ -7,7 +7,7 @@ using iRacingSdkWrapper;
 namespace DataGrabir.App.Extensions
 {
     public static class SDKWrapperHelpers {
-        public static TelemetryState ToTelemetryState(this SdkWrapper wrapper, DGConfig config)
+        public static TelemetryState ToTelemetryState(this SdkWrapper wrapper, DGConfig config, TelemetryState oldState)
         {
             var tState = new TelemetryState()
             {
@@ -20,17 +20,60 @@ namespace DataGrabir.App.Extensions
                 LapsCompleted = wrapper.GetTelemetryValue<int>("LapsCompleted").Value
             };
 
-            foreach(KeyValuePair<string, string> field in config.FormMapping)
+            tState.UpdateEvent = GetUpdateType(tState, oldState);
+
+            foreach (KeyValuePair<string, ConfFormField> field in config.FormMapping)
             {
                 tState.Fields.Add(field.Key, new TelemetryFormField()
                 {
                     Name = field.Key,
-                    FormId = field.Value,
+                    FormId = field.Value.FormId,
+                    UpdateOn = field.Value.UpdateOn,
                     Value = wrapper.GetTelemetryValue<object>(field.Key).Value
                 });
             }
 
             return tState;
+        }
+        private static UpdateEvents GetUpdateType(TelemetryState newState, TelemetryState oldState)
+        {
+            // New Lap
+            if (oldState.LapsCompleted != newState.LapsCompleted)
+            {
+                return UpdateEvents.LapStart;
+            }
+
+            // Pit entry
+            if (!oldState.OnPitRoad && newState.OnPitRoad)
+            {
+                return UpdateEvents.PitRdEntry;
+            }
+
+            // Pit Stop Start
+            if (!oldState.PlayerCarInPitStall && newState.PlayerCarInPitStall)
+            {
+                return UpdateEvents.LapStart;
+            }
+
+            // Pit stop end
+            if (oldState.PlayerCarInPitStall && !newState.PlayerCarInPitStall)
+            {
+                return UpdateEvents.LapStart;
+            }
+
+            // Pit road exit
+            if (oldState.OnPitRoad && !newState.OnPitRoad)
+            {
+                return UpdateEvents.PitRdExit;
+            }
+
+            // Tow start
+            if (oldState.PlayerCarTowTime == 0 && newState.PlayerCarTowTime > 0)
+            {
+                return UpdateEvents.TowStart;
+            }
+
+            return UpdateEvents.None;
         }
     }
 }
