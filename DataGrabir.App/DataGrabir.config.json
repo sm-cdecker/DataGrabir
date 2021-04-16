@@ -6,40 +6,130 @@
   // mappings
   "FormMapping": {
     // Core
-    "FuelLevel": "entry.50583357",
-    "OnPitRoad": "",
-    "DriverMarker": "",
+    "FuelLevel": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
+    "OnPitRoad": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
+    "DriverMarker": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
     // race info
-    "LapCompleted": "entry.2000544942",
-    "RaceLaps": "",
-    "TrackTemp": "entry.1005835583",
+    "LapCompleted": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
+    "RaceLaps": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
+    "TrackTemp": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
     // LF
-    "LFwearL": "",
-    "LFwearM": "",
-    "LFwearR": "",
-    "LFtempCL": "",
-    "LFtempCM": "",
-    "LFtempCR": "",
+    "LFwearL": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
+    "LFwearM": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
+    "LFwearR": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
+    "LFtempCL": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
+    "LFtempCM": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
+    "LFtempCR": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
     // RF
-    "RFwearR": "",
-    "RFwearM": "",
-    "RFwearL": "",
-    "RFtempCL": "",
-    "RFtempCM": "",
-    "RFtempCR": "",
+    "RFwearR": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
+    "RFwearM": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
+    "RFwearL": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
+    "RFtempCL": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
+    "RFtempCM": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
+    "RFtempCR": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
     // LR
-    "LRwearL": "",
-    "LRwearM": "",
-    "LRwearR": "",
-    "LRtempCL": "",
-    "LRtempCM": "",
-    "LRtempCR": "",
+    "LRwearL": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
+    "LRwearM": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
+    "LRwearR": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
+    "LRtempCL": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
+    "LRtempCM": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
+    "LRtempCR": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
     // RR
-    "RRwearR": "",
-    "RRwearM": "",
-    "RRwearL": "",
-    "RRtempCL": "",
-    "RRtempCM": "",
-    "RRtempCR": ""
+    "RRwearR": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
+    "RRwearM": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
+    "RRwearL": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
+    "RRtempCL": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
+    "RRtempCM": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    },
+    "RRtempCR": {
+      "UpdateOn": [1],
+      "FormId": "entry.50583357"
+    }
   }
 }
