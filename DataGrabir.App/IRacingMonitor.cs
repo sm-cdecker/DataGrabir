@@ -5,6 +5,7 @@ using System.Net.Http;
 using DataGrabir.App.Extensions;
 using System.Diagnostics;
 using DataGrabir.App.TelemState;
+using System.Collections.Generic;
 
 namespace DataGrabir.App
 {
@@ -33,9 +34,13 @@ namespace DataGrabir.App
 
         private async void TelemetryUpdate(object sender, SdkWrapper.TelemetryUpdatedEventArgs e)
         {
+            List<long> myTimes = new List<long>();
             var stopwatch = new Stopwatch();
+            
             stopwatch.Start();
+
             var newState = this.wrapper.ToTelemetryState(this.config, this.state);
+            myTimes.Add(stopwatch.ElapsedMilliseconds);
             if (!String.IsNullOrWhiteSpace(this.config.FormUrl))
             {
                 if (newState.UpdateEvent != UpdateEvents.None)
@@ -45,17 +50,18 @@ namespace DataGrabir.App
                     await this.httpClient.SendAsync(req);
                 }
             }
+            myTimes.Add(stopwatch.ElapsedMilliseconds);
             this.state = newState;
-            this.Print(e.TelemetryInfo, stopwatch.ElapsedMilliseconds);
+            this.Print(e.TelemetryInfo, string.Join(" | ", myTimes));
         }
 
-        private void Print(TelemetryInfo telemetry, long timeTaken)
+        private void Print(TelemetryInfo telemetry, string myTimes)
         {
             
             Console.Clear();
             Console.SetCursorPosition(0, 0);
             Console.WriteLine("Updated @ {0}", DateTime.Now);
-            Console.WriteLine("Took: {0}ms", timeTaken);
+            Console.WriteLine("Took: {0}", myTimes);
             Console.WriteLine(this.state.GetConsoleString());
         }
 
