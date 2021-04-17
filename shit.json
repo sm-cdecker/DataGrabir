@@ -1,0 +1,218 @@
+[
+	{
+	  "name": "Lap, Pit Entry/Exit, or Pit Start/End?",
+	  "fieldId": "entry.510231722"
+	},
+	{
+	  "name": "Current Driver",
+	  "fieldId": "entry.224743756"
+	},
+	{
+	  "name": "Fuel Level",
+	  "fieldId": "entry.50583357"
+	},
+	{
+	  "name": "Laps Completed",
+	  "fieldId": "entry.2000544942"
+	},
+	{
+	  "name": "Track Temp",
+	  "fieldId": "entry.1005835583"
+	},
+	{
+	  "name": "Race Laps",
+	  "fieldId": "entry.1217349085"
+	},
+	{
+	  "fieldId": "entry.undefined"
+	},
+	// LEFT FRONT
+	{
+	  "name": "wearL",
+	  "fieldId": "entry.189277050"
+	},
+	{
+	  "name": "wearM",
+	  "fieldId": "entry.212283663"
+	},
+	{
+	  "name": "wearR",
+	  "fieldId": "entry.557840581"
+	},
+	{
+	  "name": "tempCL",
+	  "fieldId": "entry.2106711731"
+	},
+	{
+	  "name": "tempCM",
+	  "fieldId": "entry.1289491544"
+	},
+	{
+	  "name": "tempCR",
+	  "fieldId": "entry.1594220917"
+	},
+	{
+	  "name": "Pressure",
+	  "fieldId": "entry.1276916791"
+	},
+
+
+	// RIGHT FRONT
+	{
+	  "name": "wearL",
+	  "fieldId": "entry.1967037681"
+	},
+	{
+	  "name": "wearM",
+	  "fieldId": "entry.1818055498"
+	},
+	{
+	  "name": "wearR",
+	  "fieldId": "entry.590875411"
+	},
+	{
+	  "name": "tempCL",
+	  "fieldId": "entry.1110701954"
+	},
+	{
+	  "name": "tempCM",
+	  "fieldId": "entry.544733370"
+	},
+	{
+	  "name": "tempCR",
+	  "fieldId": "entry.1904434168"
+	},
+	{
+	  "name": "Pressure",
+	  "fieldId": "entry.595095995"
+	},
+
+
+	// LEFT REAR
+	{
+	  "name": "wearL",
+	  "fieldId": "entry.1645040218"
+	},
+	{
+	  "name": "wearM",
+	  "fieldId": "entry.428061908"
+	},
+	{
+	  "name": "wearR",
+	  "fieldId": "entry.270831788"
+	},
+	{
+	  "name": "tempCL",
+	  "fieldId": "entry.1817384073"
+	},
+	{
+	  "name": "tempCM",
+	  "fieldId": "entry.1692360337"
+	},
+	{
+	  "name": "tempCR",
+	  "fieldId": "entry.1206195799"
+	},
+	{
+	  "name": "Pressure",
+	  "fieldId": "entry.2055982101"
+	},
+	{
+	  "fieldId": "entry.undefined"
+	},
+	// RIGHT REAR
+	{
+	  "name": "wearL",
+	  "fieldId": "entry.554212291"
+	},
+	{
+	  "name": "wearM",
+	  "fieldId": "entry.1610738322"
+	},
+	{
+	  "name": "wearR",
+	  "fieldId": "entry.1707502721"
+	},
+	{
+	  "name": "tempCL",
+	  "fieldId": "entry.2029382278"
+	},
+	{
+	  "name": "tempCM",
+	  "fieldId": "entry.1167510986"
+	},
+	{
+	  "name": "tempCR",
+	  "fieldId": "entry.1970879715"
+	},
+	{
+	  "name": "Pressure",
+	  "fieldId": "entry.113548887"
+	},
+	{
+	  "fieldId": "entry.undefined"
+	},
+
+	
+
+	{
+	  "name": "Last Lap Time",
+	  "fieldId": "entry.783635531"
+	},
+	{
+	  "name": "Position in Class",
+	  "fieldId": "entry.1994162357"
+	},
+	{
+	  "name": "Overall Position",
+	  "fieldId": "entry.1574736272"
+	},
+	{
+	  "name": "Current Driver Incident Count",
+	  "fieldId": "entry.182258129"
+	},
+	{
+	  "name": "Team Overall Incident Count",
+	  "fieldId": "entry.176435185"
+	},
+	{
+	  "name": "Estimated Laps Remaining",
+	  "fieldId": "entry.1350503489"
+	},
+	{
+	  "name": "Race time Remaining",
+	  "fieldId": "entry.1061809674"
+	},
+	{
+	  "name": "Left Front Pressure",
+	  "fieldId": "entry.616028545"
+	},
+	{
+	  "name": "Right Front Pressure",
+	  "fieldId": "entry.2020163745"
+	},
+	{
+	  "name": "Left Rear Pressure",
+	  "fieldId": "entry.2063638414"
+	},
+	{
+	  "name": "Right Rear Pressure",
+	  "fieldId": "entry.294114433"
+	},
+	{
+	  "name": "Required Repairs",
+	  "fieldId": "entry.1649399447"
+	},
+	{
+	  "name": "Optional Repairs",
+	  "fieldId": "entry.2054572178"
+	},
+	{
+	  "name": "Tires Changed During Stop",
+	  "fieldId": "entry.36276121"
+	},
+	{
+	  "name": "Length of Tow",
+	  "fieldId": "entry.345149871"
+	}
+  ]

@@ -1,135 +1,194 @@
 {
   // x times per second
   "UpdateFreq": 1,
-  "FormUrl": "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdtSQpPjUl8_amIow4yOzN0ueehyEHp1_bujHq77yqForh98g/formResponse",
+  "FormUrl": "https://docs.google.com/forms/u/0/d/e/1FAIpQLScwk2c-ad1n6sJr8Viyoyh34dDsCIW8ck6OYyD-KEPc8DblRA/formResponse",
 
   // mappings
   "FormMapping": {
     // Core
+    "CurrentDriver": {
+		"SendOn": [ 1, 2, 3, 4, 5, 6 ],
+		"FormId": "entry.224743756"
+	  },
+	  "TeamName": {
+		"SendOn": [ 1, 2, 3, 4, 5, 6 ],
+		"FormId": ""
+	  },
+	  "CurrentSessionNumber": {
+		"SendOn": [ 1, 2, 3, 4, 5, 6 ],
+		"FormId": ""
+	  },
+	  "SubsessionId": {
+		  "SendOn": [ 1, 2, 3, 4, 5, 6 ],
+		  "FormId": ""
+	  },
+	  "SessionTimeRemain": {
+		"SendOn": [ 1, 2, 5 ],
+		"FormId": ""
+	  },
+    "UpdateEvent": {
+      "SendOn": [ 1, 2, 3, 4, 5 ],
+      "FormId": "entry.510231722"
+    },
     "FuelLevel": {
-      "UpdateOn": [1],
+      "SendOn": [ 1, 2, 3, 4, 5 ],
       "FormId": "entry.50583357"
     },
-    "OnPitRoad": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
-    },
-    "DriverMarker": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
-    },
+
+	// pit info
+	"PitOptRepairLeft": {
+		"SendOn": [ 3, 4 ],
+		"FormId": "entry.2054572178"
+	},
+	"PitRepairLeft": {
+		"SendOn": [ 3 ],
+		"FormId": "entry.1649399447"
+	},
+	"PlayerCarTowTime": {
+		"SendOn": [ 6 ],
+		"FormId": "entry.345149871"
+	},
+	"PlayerCarMyIncidentCount": {
+		"SendOn": [ 6 ],
+		"FormId": "entry.182258129"
+	},
+
     // race info
+	"PlayerCarClassPosition": {
+		"SendOn": [ 1, 2, 5 ],
+		"FormId": "entry.1994162357"
+	},
     "LapCompleted": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
+      "SendOn": [ 1, 2, 3, 5, 6 ],
+      "FormId": "entry.2000544942"
     },
     "RaceLaps": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
+      "SendOn": [ 1, 3, 6 ],
+      "FormId": "entry.1217349085"
     },
     "TrackTemp": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
+      "SendOn": [ 1 ],
+      "FormId": "entry.1005835583"
     },
+	"RaceTime": {
+		"SendOn": [ 1, 3, 6 ],
+		"FormId": "entry.1061809674"
+	},
     // LF
+	"LFcoldPressure": {
+		"SendOn": [ 4 ],
+		"FormId": "entry.616028545"
+	},
     "LFwearL": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
+      "SendOn": [ 4 ],
+      "FormId": "entry.189277050"
     },
     "LFwearM": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
+      "SendOn": [ 4 ],
+      "FormId": "entry.212283663"
     },
     "LFwearR": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
+      "SendOn": [ 4 ],
+      "FormId": "entry.557840581"
     },
     "LFtempCL": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
+      "SendOn": [ 4 ],
+      "FormId": "entry.2106711731"
     },
     "LFtempCM": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
+      "SendOn": [ 4 ],
+      "FormId": "entry.1289491544"
     },
     "LFtempCR": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
+      "SendOn": [ 4 ],
+      "FormId": "entry.1594220917"
     },
     // RF
+	"RFcoldPressure": {
+		"SendOn": [ 4 ],
+		"FormId": "entry.2020163745"
+	},
     "RFwearR": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
+      "SendOn": [ 4 ],
+      "FormId": "entry.1967037681"
     },
     "RFwearM": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
+      "SendOn": [ 4 ],
+      "FormId": "entry.1818055498"
     },
     "RFwearL": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
+      "SendOn": [ 4 ],
+      "FormId": "entry.590875411"
     },
     "RFtempCL": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
+      "SendOn": [ 4 ],
+      "FormId": "entry.1110701954"
     },
     "RFtempCM": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
+      "SendOn": [ 4 ],
+      "FormId": "entry.544733370"
     },
     "RFtempCR": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
+      "SendOn": [ 4 ],
+      "FormId": "entry.1904434168"
     },
     // LR
+	"LRcoldPressure": {
+		"SendOn": [ 4 ],
+		"FormId": "entry.2063638414"
+	},
     "LRwearL": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
+      "SendOn": [ 4 ],
+      "FormId": "entry.1645040218"
     },
     "LRwearM": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
+      "SendOn": [ 4 ],
+      "FormId": "entry.428061908"
     },
     "LRwearR": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
+      "SendOn": [ 4 ],
+      "FormId": "entry.270831788"
     },
     "LRtempCL": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
+      "SendOn": [ 4 ],
+      "FormId": "entry.1817384073"
     },
     "LRtempCM": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
+      "SendOn": [ 4 ],
+      "FormId": "entry.1692360337"
     },
     "LRtempCR": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
+      "SendOn": [ 4 ],
+      "FormId": "entry.1206195799"
     },
     // RR
+	"RRcoldPressure": {
+		"SendOn": [ 4 ],
+		"FormId": "entry.294114433"
+	},
     "RRwearR": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
+      "SendOn": [ 4 ],
+      "FormId": "entry.554212291"
     },
     "RRwearM": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
+      "SendOn": [ 4 ],
+      "FormId": "entry.1610738322"
     },
     "RRwearL": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
+      "SendOn": [ 4 ],
+      "FormId": "entry.1707502721"
     },
     "RRtempCL": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
+      "SendOn": [ 4 ],
+      "FormId": "entry.2029382278"
     },
     "RRtempCM": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
+      "SendOn": [ 4 ],
+      "FormId": "entry.1167510986"
     },
     "RRtempCR": {
-      "UpdateOn": [1],
-      "FormId": "entry.50583357"
+      "SendOn": [ 4 ],
+      "FormId": "entry.1970879715"
     }
   }
 }
