@@ -32,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -87,7 +88,6 @@
     <Compile Include="TelemState\Models.cs" />
     <Compile Include="Models\DGConfig.cs" />
     <Compile Include="Helpers\SDKWrapperHelpers.cs" />
-    <Compile Include="TelemState\Models.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -103,6 +103,10 @@
       <Project>{d6db568b-35b3-49eb-8cb3-e4e5f1424247}</Project>
       <Name>iRacingSdkWrapper</Name>
       <EmbedInteropTypes>False</EmbedInteropTypes>
+    </ProjectReference>
+    <ProjectReference Include="..\iRacingSdkWrapper\iRacingSimulator\iRacingSimulator.csproj">
+      <Project>{1765e7db-bee4-4324-a396-923d80b61ea0}</Project>
+      <Name>iRacingSimulator</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

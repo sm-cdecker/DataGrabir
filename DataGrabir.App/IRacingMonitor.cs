@@ -1,17 +1,17 @@
 ﻿using System;
-using iRacingSdkWrapper;
 using DataGrabir.App.Models;
 using System.Net.Http;
 using DataGrabir.App.Extensions;
 using System.Diagnostics;
 using DataGrabir.App.TelemState;
 using System.Collections.Generic;
+using iRacingSimulator;
+using iRacingSdkWrapper;
 
 namespace DataGrabir.App
 {
     class IRacingMonitor
     {
-        SdkWrapper wrapper;
         TelemetryState state;
         HttpClient httpClient;
         DGConfig config;
@@ -19,17 +19,18 @@ namespace DataGrabir.App
         public IRacingMonitor(DGConfig config)
         {
             this.config = config;
-            this.wrapper = new SdkWrapper();
-            this.wrapper.TelemetryUpdateFrequency = config.UpdateFreq;
-            this.wrapper.TelemetryUpdated += TelemetryUpdate;
+
+            Sim.Instance.TelemetryUpdated += TelemetryUpdate;
+            
             this.httpClient = new HttpClient();
             this.state = new TelemetryState();
+            
         }
 
         public void Run()
         {
             Console.WriteLine("Waiting for iRacing to start...");
-            this.wrapper.Start();
+            Sim.Instance.Start(this.config.UpdateFreq);
         }
 
         private async void TelemetryUpdate(object sender, SdkWrapper.TelemetryUpdatedEventArgs e)
@@ -39,8 +40,10 @@ namespace DataGrabir.App
             
             stopwatch.Start();
 
-            var newState = this.wrapper.ToTelemetryState(this.config, this.state);
+            var newState = Sim.Instance.ToTelemetryState(this.config, this.state);
+
             myTimes.Add(stopwatch.ElapsedMilliseconds);
+
             if (!String.IsNullOrWhiteSpace(this.config.FormUrl))
             {
                 if (newState.UpdateEvent != UpdateEvents.None)

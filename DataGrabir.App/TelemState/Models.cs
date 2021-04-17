@@ -13,6 +13,10 @@ namespace DataGrabir.App.TelemState
         public bool IsRunning { get; set; }
         public bool OnPitRoad { get; set; }
         public bool DriverMarker { get; set; }
+        public string CurrentDriver { get; set; }
+        public string TeamName { get; set; }
+        public int? CurrentSessionNumber { get; set; }
+        public int SubsessionId { get; set; }
         public int LapsCompleted { get; set; }
         public bool PlayerCarInPitStall { get; set; }
         public float PlayerCarTowTime { get; set; }
@@ -24,6 +28,6 @@ namespace DataGrabir.App.TelemState
         public string Name { get; set; }
         public string FormId { get; set; }
         public object Value { get; set; }
-        public ICollection<UpdateEvents> UpdateOn { get; set; }
+        public ICollection<UpdateEvents> SendOn { get; set; }
     }
 }

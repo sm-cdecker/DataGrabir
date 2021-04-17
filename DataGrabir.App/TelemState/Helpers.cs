@@ -12,9 +12,11 @@ namespace DataGrabir.App.TelemState
             var form = new MultipartFormDataContent();
             foreach (KeyValuePair<string, TelemetryFormField> field in state.Fields)
             {
-                if (!String.IsNullOrWhiteSpace(field.Value.FormId) && field.Value.UpdateOn.Contains(state.UpdateEvent))
+                if (!String.IsNullOrWhiteSpace(field.Value.FormId) && field.Value.SendOn.Contains(state.UpdateEvent))
                 {
-                    form.Add(new StringContent(field.Value.Value.ToString()), field.Value.FormId);
+                    form.Add(new StringContent(
+                        field.Value.Value == null ? "" : field.Value.Value.ToString()),
+                        field.Value.FormId);
                 }
             }
             return form;
