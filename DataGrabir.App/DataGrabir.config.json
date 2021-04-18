@@ -2,6 +2,7 @@
   // x times per second
   "UpdateFreq": 1,
   "FormUrl": "https://docs.google.com/forms/u/0/d/e/1FAIpQLScwk2c-ad1n6sJr8Viyoyh34dDsCIW8ck6OYyD-KEPc8DblRA/formResponse",
+  "PostTelemetryToConsole": false,
 
   // mappings
   "FormMapping": {

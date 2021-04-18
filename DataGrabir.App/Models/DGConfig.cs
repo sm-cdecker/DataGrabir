@@ -7,6 +7,7 @@ namespace DataGrabir.App.Models
     {
         public int UpdateFreq { get; set; }
         public string FormUrl { get; set; }
+        public bool PostTelemetryToConsole { get; set; }
         public Dictionary<string, ConfFormField> FormMapping { get; set; }
     }
 

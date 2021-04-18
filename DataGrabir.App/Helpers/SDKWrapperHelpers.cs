@@ -17,7 +17,7 @@ namespace DataGrabir.App.Extensions
                 OnPitRoad = instance.Sdk.GetTelemetryValue<bool>("OnPitRoad").Value,
                 PlayerCarTowTime = instance.Sdk.GetTelemetryValue<float>("PlayerCarTowTime").Value,
                 PlayerCarInPitStall = instance.Sdk.GetTelemetryValue<bool>("PlayerCarInPitStall").Value,
-                LapsCompleted = instance.Sdk.GetTelemetryValue<int>("LapsCompleted").Value,
+                LapsCompleted = instance.Sdk.GetTelemetryValue<int>("LapCompleted").Value,
                 CurrentDriver = instance.Driver?.Name,
                 TeamName = instance.Driver?.TeamName,
                 CurrentSessionNumber = instance.CurrentSessionNumber,
@@ -72,7 +72,7 @@ namespace DataGrabir.App.Extensions
             }
 
             // New Lap
-            if (oldState.LapsCompleted != newState.LapsCompleted && !oldState.OnPitRoad)
+            if (oldState.LapsCompleted < newState.LapsCompleted)
             {
                 return UpdateEvents.LapStart;
             }

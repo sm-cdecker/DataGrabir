@@ -2,7 +2,6 @@
 using DataGrabir.App.Models;
 using System.Net.Http;
 using DataGrabir.App.Extensions;
-using System.Diagnostics;
 using DataGrabir.App.TelemState;
 using System.Collections.Generic;
 using iRacingSimulator;
@@ -36,13 +35,8 @@ namespace DataGrabir.App
         private async void TelemetryUpdate(object sender, SdkWrapper.TelemetryUpdatedEventArgs e)
         {
             List<long> myTimes = new List<long>();
-            var stopwatch = new Stopwatch();
-            
-            stopwatch.Start();
 
             var newState = Sim.Instance.ToTelemetryState(this.config, this.state);
-
-            myTimes.Add(stopwatch.ElapsedMilliseconds);
 
             if (!String.IsNullOrWhiteSpace(this.config.FormUrl))
             {
@@ -51,11 +45,14 @@ namespace DataGrabir.App
                     var req = new HttpRequestMessage(HttpMethod.Post, this.config.FormUrl);
                     req.Content = newState.GetForm();
                     await this.httpClient.SendAsync(req);
+                    Console.WriteLine("Posted to sheet @ {0}", DateTime.Now);
                 }
             }
-            myTimes.Add(stopwatch.ElapsedMilliseconds);
             this.state = newState;
-            this.Print(e.TelemetryInfo, string.Join(" | ", myTimes));
+            if (this.config.PostTelemetryToConsole)
+            {
+                this.Print(e.TelemetryInfo, string.Join(" | ", myTimes));
+            }
         }
 
         private void Print(TelemetryInfo telemetry, string myTimes)
